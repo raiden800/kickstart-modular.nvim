@@ -103,7 +103,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 --  See `:help lsp-config` for information about keys and how to configure
 ---@type table<string, vim.lsp.Config>
 local servers = {
-  -- clangd = {},
   -- gopls = {},
   -- pyright = {},
   -- rust_analyzer = {},
@@ -113,6 +112,13 @@ local servers = {
   --
   -- But for many setups, the LSP (`ts_ls`) will work just fine
   -- ts_ls = {},
+
+  clangd = {
+    -- if you want to force using g++ suggestions / headers
+    -- I think otherwise it'll use clang/++ for suggestions
+    -- cmd = { 'clangd', '--query-driver=/usr/bin/g++' },
+  },
+  hls = {},
 
   stylua = {}, -- Used to format Lua code
 
