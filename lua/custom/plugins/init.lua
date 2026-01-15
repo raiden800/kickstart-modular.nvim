@@ -2,4 +2,10 @@
 --  I promise not to create any merge conflicts in this directory :)
 --
 -- See the kickstart.nvim README for more information
-return {}
+return {
+  -- Seamless navigation between tmux panes and vim splits
+  {
+    'christoomey/vim-tmux-navigator',
+    lazy = false,
+  },
+}

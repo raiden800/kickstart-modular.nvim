@@ -208,18 +208,23 @@ return {
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        -- clangd = {},
         -- gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},
-        -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
+        -- ... etc. see `:help lspconfig-all` for a list of all the pre-configured lsps
         --
-        -- Some languages (like typescript) have entire language plugins that can be useful:
+        -- some languages (like typescript) have entire language plugins that can be useful:
         --    https://github.com/pmizio/typescript-tools.nvim
         --
-        -- But for many setups, the LSP (`ts_ls`) will work just fine
+        -- but for many setups, the lsp (`ts_ls`) will work just fine
         -- ts_ls = {},
         --
+        clangd = {
+          -- if you want to force using g++ suggestions / headers
+          -- I think otherwise it'll use clang/++ for suggestions
+          -- cmd = { 'clangd', '--query-driver=/usr/bin/g++' },
+        },
+        hls = {},
 
         lua_ls = {
           -- cmd = { ... },
